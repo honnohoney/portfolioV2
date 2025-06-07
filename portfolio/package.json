@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": "ng build --configuration production && npx http-server dist/portfolio",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
