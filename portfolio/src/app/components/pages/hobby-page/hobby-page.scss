@@ -1,0 +1,21 @@
+:host {
+  .hobby-page-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 34px;
+    gap: 34px;
+    height: 100%;
+    .hobby-page-title {
+      font-weight: 700;
+      font-size: 28px;
+    }
+    .hobby-page-body {
+      .card-wrap {
+        display: flex;
+        flex-flow: column;
+        gap: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use './color' as *;
+
+.glow-button {
+  background-color: $primary-dark-color;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid $border-color-1;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  user-select: none;
+  box-shadow: $box-shadow-1;
+  transition: all 0.3s ease;
+  &.selected {
+    border: 2px solid $border-color-1;
+    transform: scale(1.3);
+  }
+}

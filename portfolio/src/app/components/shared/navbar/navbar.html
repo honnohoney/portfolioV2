@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<div class="navbar-container">
+  <div class="menu-wrap">
+    @for(menu of menuList; track $index) {
+    <div
+      class="menu-btn"
+      [class.selected]="menu.type === selectedType"
+      (click)="selectMenu(menu.type, $event)"
+    >
+      <div class="menu-icon">
+        @switch(menu?.type) { @case ('HOBBY') {
+        <img src="/assets/icons/hobby-icon.svg" /> } @case ('CONTACT') {
+        <img src="/assets/icons/contact-icon.svg" draggable="false" /> } @case
+        ('HOME') { <img src="/assets/icons/home-icon.svg" draggable="false" /> }
+        @case ('PROJECT') {
+        <img src="/assets/icons/project-icon.svg" draggable="false" /> } @case
+        ('ABOUT_ME') {
+        <img src="/assets/icons/about-me-icon.svg" draggable="false" /> } }
+      </div>
+    </div>
+    }
+  </div>
+</div>

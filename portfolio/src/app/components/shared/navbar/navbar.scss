@@ -1,0 +1,19 @@
+@use "../../../../styles/index.scss" as *;
+
+:host {
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    background-color: $primary-dark-color;
+    padding: 26px;
+    box-shadow: $box-shadow-2;
+    .menu-wrap {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      .menu-btn {
+        @extend .glow-button;
+      }
+    }
+  }
+}

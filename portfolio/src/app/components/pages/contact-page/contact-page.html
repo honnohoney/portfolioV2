@@ -1,1 +1,24 @@
-<p>contact-page works!</p>
+<div class="contact-page-container">
+  <div class="contact-page-title">Contacts</div>
+  <div class="contact-page-body">
+    <div class="box-group">
+      @for(contact of mainContacts; track $index){
+      <div class="box">
+        @switch(contact?.type) { @case ('GITHUB') { github icon } @case
+        ('FACEBOOK') { facebook icon } @case ('INSTAGRAM') { instagram icon } }
+      </div>
+      }
+    </div>
+    <div class="bar-group">
+      @for(contact of contacts; track $index){
+      <div class="bar">
+        <div class="icon">
+          @switch(contact?.type) { @case ('MAIL') { mail icon } @case ('PHONE')
+          { phone icon } @case ('LOCATION') { location icon } }
+        </div>
+        <div class="text">{{ contact?.text }}</div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

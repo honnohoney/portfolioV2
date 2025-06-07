@@ -1,0 +1,11 @@
+:host {
+  .app-container {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    // .app-navbar {}
+    .app-content {
+      flex: 1;
+    }
+  }
+}
