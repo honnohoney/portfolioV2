@@ -28,7 +28,19 @@
         padding: 8px 16px;
         font-size: 14px;
         cursor: pointer;
-        user-select: none;;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &.open {
+          .arrow-icon {
+            transform: rotate(-180deg);
+          }
+        }
+        .arrow-icon {
+          transition: transform 0.3s ease;
+          width: 16px;
+        }
       }
       .project-card-container {
         display: flex;
@@ -36,6 +48,21 @@
         gap: 34px;
         width: 100%;
         flex: 1;
+      }
+    }
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel.project-page-filter-menu {
+  background-color: $background-item-color;
+  border-radius: 8px;
+  margin: 8px 0 0 0;
+  .mat-mdc-menu-content {
+    padding: 0;
+    .mat-mdc-menu-item {
+      .mat-mdc-menu-item-text {
+        font-size: 14px;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
       }
     }
   }
