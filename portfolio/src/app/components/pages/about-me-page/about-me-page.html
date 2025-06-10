@@ -3,8 +3,15 @@
     <div class="profile-picture"></div>
     <div class="title-name">Hanuera kim (Hana)</div>
     <div class="tag-group">
-      <div class="tag">tag</div>
+      @for(tag of tagList; track $index){
+      <div class="tag" [ngStyle]="{'backgroundColor': tag?.color}">
+        <div class="circle"></div>
+        {{ tag?.text }}
+      </div>
+      }
     </div>
-    <div class="timeline-container">timeline</div>
+    <div class="timeline-container">
+      <app-timeline [timelineList]="timelineList"></app-timeline>
+    </div>
   </div>
 </div>

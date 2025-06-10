@@ -1,0 +1,18 @@
+<div class="timeline-container">
+  <div class="timeline-points-group">
+    @for(point of timelineList; track $index){
+    <div class="circle-point"></div>
+    }
+  </div>
+  <div class="timeline-content-group">
+    @for(content of timelineList; track $index){
+    <div
+      class="timeline-card"
+     [ngStyle]="{'width': (timelineList?.length ? 100 / timelineList.length : 0) + '%'}"
+    >
+      <div class="title">{{ content?.year }}</div>
+      <div class="description">{{ content?.text }}</div>
+    </div>
+    }
+  </div>
+</div>
