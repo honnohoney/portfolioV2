@@ -11,10 +11,13 @@
       font-size: 28px;
     }
     .hobby-page-body {
+      width: 100%;
+      max-width: 60%;
       .card-wrap {
         display: flex;
         flex-flow: column;
         gap: 32px;
+        width: 100%;
       }
     }
   }

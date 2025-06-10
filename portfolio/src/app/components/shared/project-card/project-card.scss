@@ -1,0 +1,32 @@
+@use "../../../../../src/styles/color.scss" as *;
+
+:host {
+  .project-card-container {
+    display: flex;
+    background-color: $background-item-color;
+    padding: 18px;
+    gap: 24px;
+    border-radius: 24px;
+    border: 2px solid $border-color-1;
+    box-shadow: $box-shadow-4;
+    .img-frame {
+      border-radius: 24px;
+      border: 1px solid $border-color-2;
+      background-color: $img-background-color;
+      width: 120px;
+      height: 120px;
+    }
+    .text-container {
+      display: flex;
+      flex-flow: column;
+      gap: 16px;
+      .title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .description {
+        font-size: 14px;
+      }
+    }
+  }
+}

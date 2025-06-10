@@ -1,0 +1,18 @@
+<div class="carousel-gallery-container">
+  <div
+    class="carousel-wrapper"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+    (pointerleave)="onPointerUp()"
+  >
+    @for (image of imgList; track $index) {
+      <div
+        class="carousel-card"
+        [ngStyle]="getStyleForCard($index)"
+      >
+        <img [src]="image" class="card-img" [draggable]="false" />
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,42 @@
+@use "../../../../../src/styles/color.scss" as *;
+
+:host {
+  .carousel-gallery-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .carousel-card {
+      position: absolute;
+      height: 100%;
+      width: 28%;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      pointer-events: none;
+      user-select: none;
+      .card-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        border: 2px solid $border-color-1;
+        background-color: $primary-dark-color;
+        box-shadow: $box-shadow-5;
+        object-fit: contain;
+        user-select: none;
+        padding: 12px;
+      }
+    }
+  }
+}
