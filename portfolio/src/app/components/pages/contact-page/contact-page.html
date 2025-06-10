@@ -3,18 +3,61 @@
   <div class="contact-page-body">
     <div class="box-group">
       @for(contact of mainContacts; track $index){
-      <div class="box">
-        @switch(contact?.type) { @case ('GITHUB') { github icon } @case
-        ('FACEBOOK') { facebook icon } @case ('INSTAGRAM') { instagram icon } }
+      <div class="box" (click)="goToPage(contact.url)">
+        @switch(contact?.type) { @case ('GITHUB') {
+        <img
+          src="/assets/icons/github-icon.svg"
+          class="platform-icon"
+          [draggable]="false"
+        />
+        } @case ('FACEBOOK') {
+        <img
+          src="/assets/icons/facebook-icon.svg"
+          class="platform-icon"
+          [draggable]="false"
+        />
+        } @case ('INSTAGRAM') {
+        <img
+          src="/assets/icons/instagram-icon.svg"
+          class="platform-icon"
+          [draggable]="false"
+        />
+        } }
       </div>
       }
     </div>
+    @if(copiedMessage.show){
+    <div
+      class="copied-popup"
+      [ngStyle]="{ top: copiedMessage.y + 'px', left: copiedMessage.x + 'px' }"
+    >
+      Copied!
+    </div>
+    }
+
     <div class="bar-group">
-      @for(contact of contacts; track $index){
-      <div class="bar">
+      @for(contact of contacts; track $index; let i = $index) {
+      <div class="bar" (click)="copyToClipboard($event, contact.text)">
         <div class="icon">
-          @switch(contact?.type) { @case ('MAIL') { mail icon } @case ('PHONE')
-          { phone icon } @case ('LOCATION') { location icon } }
+          @switch(contact?.type) { @case ('MAIL') {
+          <img
+            src="/assets/icons/mail-icon.svg"
+            class="icon-img"
+            [draggable]="false"
+          />
+          } @case ('PHONE') {
+          <img
+            src="/assets/icons/phone-icon.svg"
+            class="icon-img"
+            [draggable]="false"
+          />
+          } @case ('LOCATION') {
+          <img
+            src="/assets/icons/location-icon.svg"
+            class="icon-img"
+            [draggable]="false"
+          />
+          } }
         </div>
         <div class="text">{{ contact?.text }}</div>
       </div>
