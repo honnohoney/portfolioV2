@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.scss',
   imports: [],
 })
-export class Navbar {
-  navbarContainerRef!: ElementRef;
-
+export class Navbar implements OnInit {
   selectedType: string = 'HOME';
   menuList = [
     { type: 'HOBBY', tooltip: 'Hobbies' },
@@ -20,7 +19,19 @@ export class Navbar {
     { type: 'ABOUT_ME', tooltip: 'About me' },
   ];
 
+  private urlToTypeMap: Record<string, string> = {
+    '': 'HOME',
+    about: 'ABOUT_ME',
+    contact: 'CONTACT',
+    hobby: 'HOBBY',
+    project: 'PROJECT',
+  };
+
   constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.getSelectedMenuByRoute();
+  }
 
   navigateTo(type: string): void {
     const pathMap: Record<string, string> = {
@@ -36,5 +47,14 @@ export class Navbar {
   selectMenu(type: string, event: Event): void {
     this.selectedType = type;
     this.navigateTo(type);
+  }
+
+  getSelectedMenuByRoute() {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        const urlSegment = event.urlAfterRedirects.split('/')[1] ?? '';
+        this.selectedType = this.urlToTypeMap[urlSegment] ?? 'HOME';
+      });
   }
 }
