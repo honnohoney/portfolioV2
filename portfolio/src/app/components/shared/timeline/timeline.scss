@@ -55,3 +55,15 @@
     }
   }
 }
+
+@media #{$media-mobile-size} {
+  :host {
+    .timeline-container {
+      .timeline-card {
+        .description {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
