@@ -42,7 +42,7 @@
   }
 }
 
-@media #{$media-mobile-size} {
+@media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .hobby-page-container {
       .hobby-page-body {

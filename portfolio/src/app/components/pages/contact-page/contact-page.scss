@@ -108,7 +108,7 @@
   }
 }
 
-@media #{$media-mobile-size} {
+@media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .contact-page-container {
       .contact-page-body {

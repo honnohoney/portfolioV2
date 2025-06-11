@@ -34,6 +34,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        margin: 0 24px 0 0;
         &.open {
           .arrow-icon {
             transform: rotate(-180deg);
@@ -94,7 +95,7 @@
   }
 }
 
-@media #{$media-mobile-size} {
+@media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .project-page-container {
       padding: 34px;
@@ -102,6 +103,9 @@
       height: 100%;
       .project-page-body {
         max-width: 100%;
+        .filter-box {
+          margin: 0 12px 0 0;
+        }
         .project-card-container {
           gap: 24px;
           padding: 0 12px;
