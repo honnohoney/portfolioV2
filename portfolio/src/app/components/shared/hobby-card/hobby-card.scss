@@ -9,11 +9,13 @@
     border-radius: 24px;
     border: 3px solid $border-color-3;
     box-shadow: $box-shadow-4;
+    align-items: center;
     .img-frame {
       border-radius: 24px;
       border: 1px solid $border-color-1;
       background-color: $img-background-color;
       width: 180px;
+      min-width: 180px;
       height: 180px;
       box-shadow: 0 4px 4px 0 rgba($background-item-color, 25%);
     }
@@ -21,12 +23,31 @@
       display: flex;
       flex-flow: column;
       gap: 16px;
+      overflow: hidden;
       .title {
         font-size: 18px;
         font-weight: 700;
       }
       .description {
         font-size: 14px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size} {
+  :host {
+    .hobby-card-container {
+      .img-frame {
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
+      }
+      .text-container {
+        .description {
+          max-height: 114px;
+        }
       }
     }
   }

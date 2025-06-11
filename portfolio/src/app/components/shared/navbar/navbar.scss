@@ -34,3 +34,16 @@
     }
   }
 }
+
+@media #{$media-mobile-size} {
+  :host {
+    .navbar-container {
+     .menu-wrap {
+      .menu-btn {
+        width: 48px;
+        height: 48px;
+      }
+     }
+    }
+  }
+}

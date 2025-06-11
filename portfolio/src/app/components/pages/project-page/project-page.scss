@@ -79,12 +79,33 @@
     .mat-mdc-menu-item {
       background-color: $background-item-color;
       transition: background-color 0.3s ease;
+      border-bottom: 1px solid $white-color;
       .mat-mdc-menu-item-text {
         font-size: 14px;
         font-family: Roboto, "Helvetica Neue", sans-serif;
       }
+      &:last-child {
+        border-bottom: transparent;
+      }
       &:hover {
         background-color: $img-background-color;
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size} {
+  :host {
+    .project-page-container {
+      padding: 34px;
+      gap: 34px;
+      height: 100%;
+      .project-page-body {
+        max-width: 100%;
+        .project-card-container {
+          gap: 24px;
+          padding: 0 12px;
+        }
       }
     }
   }

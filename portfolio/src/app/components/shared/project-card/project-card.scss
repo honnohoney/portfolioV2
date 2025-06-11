@@ -21,12 +21,32 @@
       display: flex;
       flex-flow: column;
       gap: 16px;
+      overflow: hidden;
       .title {
         font-size: 18px;
         font-weight: 700;
       }
       .description {
         font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size} {
+  :host {
+    .project-card-container {
+      padding: 12px;
+      .text-container {
+        gap: 8px;
+        .title {
+          font-size: 16px;
+        }
+        .description {
+          font-size: 12px;
+        }
       }
     }
   }

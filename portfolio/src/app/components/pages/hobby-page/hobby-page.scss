@@ -41,3 +41,13 @@
     }
   }
 }
+
+@media #{$media-mobile-size} {
+  :host {
+    .hobby-page-container {
+      .hobby-page-body {
+        max-width: 100%;
+      }
+    }
+  }
+}
