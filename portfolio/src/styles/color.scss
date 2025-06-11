@@ -1,16 +1,22 @@
 $primary-dark-color: #35174a;
 $bg-light-color: #793bba;
 $white-color: #ffffff;
-$background-item-color: #3B1244;
-$profile-background-color: #33004A;
-$img-background-color: #2F0B37;
+$background-item-color: #3b1244;
+$profile-background-color: #33004a;
+$img-background-color: #2f0b37;
+$light-purple-color: #c585f0;
 
 $border-color-1: #9f01f0;
-$border-color-2: #6440AC;
-$border-color-3: #CB0BED;
+$border-color-2: #6440ac;
+$border-color-3: #cb0bed;
 
 $box-shadow-1: 0 4px 4px 4px rgba(#9f01f0, 25%);
 $box-shadow-2: 0 10px 20px 0 rgba(#9f01f0, 25%);
 $box-shadow-3: 0 0px 4px 8px rgba(#9f01f0, 25%);
 $box-shadow-4: 0 4px 4px 10px rgba(#9f01f0, 25%);
 $box-shadow-5: 0 6px 10px 4px rgba(#9f01f0, 25%);
+
+// responsive
+
+$media-m: "(max-width: 1270px)";
+$media-mobile-size: "(max-width: 440px)";
