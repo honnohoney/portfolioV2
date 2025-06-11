@@ -6,6 +6,7 @@
       [class.selected]="menu.type === selectedType"
       (click)="selectMenu(menu.type, $event)"
     >
+     <div class="tooltip-container">{{ menu?.tooltip }}</div>
       <div class="menu-icon">
         @switch(menu?.type) { @case ('HOBBY') {
         <img src="/assets/icons/hobby-icon.svg" /> } @case ('CONTACT') {

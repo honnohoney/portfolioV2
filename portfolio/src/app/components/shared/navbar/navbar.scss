@@ -13,6 +13,23 @@
       gap: 28px;
       .menu-btn {
         @extend .glow-button;
+        position: relative;
+        .tooltip-container {
+          opacity: 0;
+          position: absolute;
+          bottom: -32px;
+          font-size: 12px;
+          background-color: $img-background-color;
+          padding: 4px 8px;
+          border-radius: 4px;
+          white-space: nowrap;
+          transition: 0.3s opacity ease;
+        }
+        &:hover {
+          .tooltip-container {
+           opacity: 1;
+          }
+        }
       }
     }
   }
