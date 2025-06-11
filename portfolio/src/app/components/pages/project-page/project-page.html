@@ -1,15 +1,27 @@
 <div class="project-page-container">
   <div class="project-page-title">Projects</div>
   <div class="project-page-body">
-    <div class="filter-box" [matMenuTriggerFor]="projectPageFilterMenu" #menuTrigger="matMenuTrigger" [class.open]="menuTrigger.menuOpen">
-      filter
+    <div
+      class="filter-box"
+      [matMenuTriggerFor]="projectPageFilterMenu"
+      #menuTrigger="matMenuTrigger"
+      [class.open]="menuTrigger.menuOpen"
+    >
+      {{ menuOptions[selectedOption]?.name }}
       <img src="/assets/icons/arrow-icon-white.svg" class="arrow-icon" />
     </div>
     <mat-menu #projectPageFilterMenu="matMenu" class="project-page-filter-menu">
-      <button mat-menu-item>menu</button>
+      @for(option of menuOptions; track $index) {
+      <button mat-menu-item (click)="onSelectOption($index)">
+        {{ option?.name }}
+      </button>
+      }
     </mat-menu>
     <div class="project-card-container">
-      <app-project-card></app-project-card>
+      @for(project of projectList; track $index){<app-project-card
+        [projectDetail]="project"
+      ></app-project-card
+      >}
     </div>
   </div>
 </div>

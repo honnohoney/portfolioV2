@@ -2,7 +2,9 @@
   <div class="hobby-page-title">Hobbies</div>
   <div class="hobby-page-body">
     <div class="card-wrap">
-      <app-hobby-card></app-hobby-card>
+      @for(hobby of hobbyList; track $index){
+      <app-hobby-card [hobby]="hobby"></app-hobby-card>
+      }
     </div>
   </div>
 </div>
