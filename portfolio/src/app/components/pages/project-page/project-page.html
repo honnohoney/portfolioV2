@@ -7,13 +7,13 @@
       #menuTrigger="matMenuTrigger"
       [class.open]="menuTrigger.menuOpen"
     >
-      {{ menuOptions[selectedOption]?.name }}
+      {{ menuOptions[selectedOption].name }}
       <img src="/assets/icons/arrow-icon-white.svg" class="arrow-icon" />
     </div>
     <mat-menu #projectPageFilterMenu="matMenu" class="project-page-filter-menu">
       @for(option of menuOptions; track $index) {
       <button mat-menu-item (click)="onSelectOption($index)">
-        {{ option?.name }}
+        {{ option.name }}
       </button>
       }
     </mat-menu>

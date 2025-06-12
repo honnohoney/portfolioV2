@@ -4,9 +4,9 @@
     <div class="title-name">Hanuera kim (Hana)</div>
     <div class="tag-group">
       @for(tag of tagList; track $index){
-      <div class="tag" [ngStyle]="{'backgroundColor': tag?.color}">
+      <div class="tag" [ngStyle]="{'backgroundColor': tag.color}">
         <div class="circle"></div>
-        {{ tag?.text }}
+        {{ tag.text }}
       </div>
       }
     </div>

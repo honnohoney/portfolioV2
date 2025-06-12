@@ -4,7 +4,7 @@
     <div class="box-group">
       @for(contact of mainContacts; track $index){
       <div class="box" (click)="goToPage(contact.url)">
-        @switch(contact?.type) { @case ('GITHUB') {
+        @switch(contact.type) { @case ('GITHUB') {
         <img
           src="/assets/icons/github-icon.svg"
           class="platform-icon"
@@ -39,7 +39,7 @@
       @for(contact of contacts; track $index; let i = $index) {
       <div class="bar" (click)="copyToClipboard($event, contact.text)">
         <div class="icon">
-          @switch(contact?.type) { @case ('MAIL') {
+          @switch(contact.type) { @case ('MAIL') {
           <img
             src="/assets/icons/mail-icon.svg"
             class="icon-img"
@@ -59,7 +59,7 @@
           />
           } }
         </div>
-        <div class="text">{{ contact?.text }}</div>
+        <div class="text">{{ contact.text }}</div>
       </div>
       }
     </div>

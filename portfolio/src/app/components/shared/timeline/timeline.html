@@ -8,10 +8,10 @@
     @for(content of timelineList; track $index){
     <div
       class="timeline-card"
-     [ngStyle]="{'width': (timelineList?.length ? 100 / timelineList.length : 0) + '%'}"
+     [ngStyle]="{'width': (timelineList.length ? 100 / timelineList.length : 0) + '%'}"
     >
-      <div class="title">{{ content?.year }}</div>
-      <div class="description">{{ content?.text }}</div>
+      <div class="title">{{ content.year }}</div>
+      <div class="description">{{ content.text }}</div>
     </div>
     }
   </div>
