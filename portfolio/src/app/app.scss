@@ -1,11 +1,83 @@
+@use "../../src/styles/color.scss" as *;
+
 :host {
   .app-container {
     height: 100%;
     display: flex;
     flex-flow: column;
-    // .app-navbar {}
+    position: relative;
+    z-index: 1;
+
     .app-content {
       flex: 1;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+   .circle-1,
+  .circle-2,
+  .circle-3 {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(40px);
+    mix-blend-mode: screen;
+  }
+
+  .circle-1 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle,  $circle-gray-glow-1 0%, $border-color-3 100%,);
+    top: 20px;
+    left: 20px;
+    animation: moveCircle1 40s ease-in-out infinite alternate;
+  }
+
+  .circle-2 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, $circle-gray-glow-1 0%, $border-color-3 100%);
+    bottom: 40px;
+    right: 40px;
+    animation: moveCircle2 45s ease-in-out infinite alternate;
+  }
+
+  .circle-3 {
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle,$circle-gray-glow-1 0%, $border-color-1 100% );
+    top: 40%;
+    right: -80px;
+    animation: moveCircle3 60s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveCircle1 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(40px, 60px) scale(1.1) rotate(30deg);
+    }
+  }
+
+  @keyframes moveCircle2 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50px, -50px) scale(1.2) rotate(-20deg);
+    }
+  }
+
+  @keyframes moveCircle3 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(20px, -40px) scale(1.05) rotate(45deg);
     }
   }
 }
