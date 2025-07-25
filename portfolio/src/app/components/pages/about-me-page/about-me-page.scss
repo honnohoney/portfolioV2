@@ -11,13 +11,20 @@
       gap: 16px;
       align-items: center;
       max-width: 80%;
-      .profile-picture {
+      .profile-frame {
         width: 13em;
         height: 13em;
         background-color: $profile-background-color;
         border-radius: 50%;
-        border: 2px solid $border-color-1;
+        border: 4px solid $border-color-3;
         box-shadow: $box-shadow-3;
+        overflow: hidden;
+        .profile-picture {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          animation: rotationRadio 8s linear infinite;
+        }
       }
       .title-name {
         font-size: 28px;
@@ -50,13 +57,12 @@
   }
 }
 
-@media  #{$media-m} {
+@media #{$media-m} {
   :host {
     .about-me-page-container {
       padding: 12px;
       .about-me-page-body {
-        gap: 8px;
-        .profile-picture {
+        .profile-frame {
           width: 12em;
           height: 12em;
         }
@@ -89,5 +95,14 @@
   }
   100% {
     box-shadow: 0 8px 20px 0 rgba($light-purple-color, 0.25);
+  }
+}
+
+@keyframes rotationRadio {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
