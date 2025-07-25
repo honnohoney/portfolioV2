@@ -35,6 +35,7 @@
           box-shadow: $box-shadow-5;
           transition: box-shadow 0.3s ease;
           border: 2px solid $border-color-1;
+          padding: 12px;
           .platform-icon {
             width: 6em;
             min-width: 6em;
@@ -111,6 +112,7 @@
 @media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .contact-page-container {
+      height: unset;
       .contact-page-body {
         max-width: 100%;
         gap: 1em;
@@ -119,6 +121,37 @@
           .box {
             transform: scale(0.8);
             width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size} {
+  :host {
+    .contact-page-container {
+      .contact-page-body {
+        .box-group {
+          flex: 0.7;
+        }
+      }
+    }
+  }
+}
+@media #{$media-tablet-size} {
+  :host {
+    .contact-page-container {
+      padding: 16px 11px;
+      .contact-page-body {
+        .box-group {
+          flex: 0.5;
+          .box {
+            .platform-icon {
+              width: 5em;
+              min-width: 5em;
+              height: 5em;
+            }
           }
         }
       }

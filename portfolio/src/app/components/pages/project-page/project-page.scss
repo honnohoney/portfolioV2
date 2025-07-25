@@ -98,7 +98,7 @@
 @media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .project-page-container {
-      padding: 34px;
+      padding: 16px 11px;
       gap: 34px;
       height: 100%;
       .project-page-body {

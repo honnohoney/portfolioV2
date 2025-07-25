@@ -20,9 +20,12 @@ html {
   }
 }
 
-html,
-body {
+html, body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 body {
   margin: 0;
