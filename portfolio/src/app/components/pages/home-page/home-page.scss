@@ -1,3 +1,5 @@
+@use "../../../../../src/styles/color.scss" as *;
+
 :host {
   .home-page-container {
     display: flex;
@@ -25,6 +27,45 @@
       .description {
         font-size: 18px;
         text-align: center;
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size}, #{$media-tablet-size} {
+  :host {
+    .home-page-container {
+     padding: 16px 11px;
+    }
+  }
+}
+
+@media #{$media-tablet-size} {
+  :host {
+    .home-page-container {
+      .home-page-body {
+        .carousel-card-container {
+          max-height: 50%;
+        }
+        .description {
+          flex: 1;
+          padding: 24px;
+        }
+      }
+    }
+  }
+}
+@media #{$media-mobile-size} {
+  :host {
+    .home-page-container {
+      .home-page-body {
+        .carousel-card-container {
+          max-height: 40%;
+        }
+        .description {
+          flex: 1;
+          padding: 4px;
+        }
       }
     }
   }

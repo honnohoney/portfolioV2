@@ -17,6 +17,7 @@
       width: 100%;
       perspective: 1000px;
       cursor: pointer;
+      align-items: center;
     }
 
     .carousel-card {
@@ -40,3 +41,41 @@
     }
   }
 }
+
+@media #{$media-mobile-size}, #{$media-tablet-size} {
+  :host {
+    .carousel-gallery-container {
+      padding: 0 16px; // adds spacing for partial next/prev peek
+      .carousel-wrapper {
+        width: 100%;
+        overflow: hidden;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .carousel-card {
+        width: 100%;
+        max-width: 280px;
+        // height: auto;
+        .card-img {
+          object-fit: contain;
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$media-mobile-size} {
+  :host {
+    .carousel-gallery-container {
+      .carousel-wrapper {
+        .carousel-card {
+          max-width: 210px;
+        }
+      }
+    }
+  }
+}
+
+
