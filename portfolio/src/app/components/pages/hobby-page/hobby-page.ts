@@ -12,17 +12,17 @@ export class HobbyPage {
     {
       title: 'Crochet',
       desc: 'i’ve crocheting some cute stuff, bag, cute gloves etc...',
-      image: '',
+      image: '../../../../assets/img/hobby/crochet.jpg',
     },
     {
       title: 'Reading',
       desc: 'i enjoy reading philosophy, psychology, horror, thriller',
-      image: '',
+      image: '../../../../assets/img/hobby/books-copy.jpg',
     },
     {
       title: 'Gaming',
       desc: 'i enjoy playing online game like fps, action-survival horror game',
-      image: '',
+      image: '../../../../assets/img/hobby/game.png',
     },
   ];
 }

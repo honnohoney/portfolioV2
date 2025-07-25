@@ -45,6 +45,7 @@
 @media #{$media-mobile-size}, #{$media-tablet-size} {
   :host {
     .hobby-page-container {
+      padding: 16px 11px;
       .hobby-page-body {
         max-width: 100%;
       }
